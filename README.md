@@ -1,2 +1,2 @@
-# Hari_5188144_CapstoneProject_B2
+# Hari_5188144_CapstoneProject
 Wipro Capstone Project B2
