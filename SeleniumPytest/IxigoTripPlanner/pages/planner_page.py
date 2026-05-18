@@ -1,143 +1,122 @@
-import time
-
-from openpyxl import load_workbook
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from utils.logger import LogGen
 
-
 logger = LogGen.loggen()
-
 
 class PlannerPage:
 
     def __init__(self, driver):
+
         self.driver = driver
 
+        # LOCATORS
+        self.plan_btn_xpath = "//a[@data-testid='submenu-item' and contains(@href,'plan')]"
+
+        self.travel_month_xpath = "//span[contains(text(),'Travel month')]"
+
+        self.from_location_xpath = "//span[@class='body-xs' and contains(text(),'From')]"
+
+        self.search_input_xpath = "//input[@placeholder='Search']"
+
+    # CLICK PLAN
     def click_plan(self):
 
         logger.info("Waiting for Plan button")
 
         plan_btn = WebDriverWait(self.driver, 20).until(
-            EC.element_to_be_clickable(
-                (
-                    By.XPATH,"//a[@data-testid='submenu-item' and contains(@href,'plan')]")))
+            EC.presence_of_element_located(
+                (By.XPATH, self.plan_btn_xpath)
+            )
+        )
 
-        assert plan_btn.is_displayed(), "Plan button is not visible"
-
-        logger.info("Clicking Plan button")
-
-        plan_btn.click()
+        self.driver.execute_script(
+            "arguments[0].click();",
+            plan_btn
+        )
 
         logger.info("Plan page opened")
 
-        time.sleep(2)
+    # SELECT TRAVEL MONTH
+    def select_travel_month(self, month_name):
 
-
-    #travel month selection
-    def select_travel_month(self):
-        logger.info("Waiting for Travel Month section")
+        logger.info("Waiting for Travel Month")
 
         month_btn = WebDriverWait(self.driver, 20).until(
-            EC.element_to_be_clickable(
-                (
-                    By.XPATH,
-                    "//span[contains(text(),'Travel month')]"
-                )
+            EC.presence_of_element_located(
+                (By.XPATH, self.travel_month_xpath)
             )
         )
 
-        month_btn.click()
+        self.driver.execute_script(
+            "arguments[0].click();",
+            month_btn
+        )
 
         logger.info("Travel Month clicked")
 
-        time.sleep(2)
+        month_xpath = f"//span[text()='{month_name}']"
 
-        logger.info("Waiting for August option")
-
-        august = WebDriverWait(self.driver, 20).until(
-            EC.element_to_be_clickable(
-                (
-                    By.XPATH,
-                    "//span[text()='August']"
-                )
+        month = WebDriverWait(self.driver, 20).until(
+            EC.presence_of_element_located(
+                (By.XPATH, month_xpath)
             )
         )
 
-        august.click()
+        self.driver.execute_script(
+            "arguments[0].click();",
+            month
+        )
 
-        logger.info("August selected")
+        logger.info(f"{month_name} selected")
 
-        time.sleep(2)
-
-
-    # click from place
+    # CLICK FROM LOCATION
     def click_from_location(self):
 
-        logger.info("Waiting for From place field")
+        logger.info("Waiting for From location field")
 
         from_place = WebDriverWait(self.driver, 20).until(
             EC.element_to_be_clickable(
-                (
-                    By.XPATH,
-                    "//span[@class='body-xs' and contains(text(),'From')]"
-                )
+                (By.XPATH, self.from_location_xpath)
             )
         )
-
-        assert from_place.is_displayed(), "From place field is not visible"
 
         from_place.click()
 
-        logger.info("From place field clicked")
+        logger.info("From location field clicked")
 
-    def enter_from_location(self):
-        logger.info("Opening Excel file")
+    # ENTER FROM LOCATION
+    def enter_from_location(self, from_location):
 
-        workbook = load_workbook("testdata/places.xlsx")
+        logger.info(f"Entering from location : {from_location}")
 
-        sheet = workbook["Sheet1"]
-
-        from_location = sheet.cell(row=2, column=1).value
-
-        logger.info(f"From Location: {from_location}")
-
-        logger.info("Waiting for search input")
-
-        from_search = WebDriverWait(self.driver, 20).until(
+        search_input = WebDriverWait(self.driver, 20).until(
             EC.element_to_be_clickable(
-                (
-                    By.XPATH,
-                    "//input[@placeholder='Search']"
-                )
+                (By.XPATH, self.search_input_xpath)
             )
         )
 
-        from_search.click()
+        search_input.clear()
 
-        from_search.clear()
-
-        from_search.send_keys(from_location)
-
-        time.sleep(2)
+        search_input.send_keys(from_location)
 
         logger.info("From location entered")
 
+    # CLICK LOCATION FROM LIST
+    def click_from_list(self, from_location):
 
-    # click the first locatio from list
-    def click_from_list(self):
+        logger.info(f"Selecting location : {from_location}")
 
-        logger.info("Waiting for From place field")
+        location_xpath = f"//a[contains(.,'{from_location}')]"
 
-        from_place = WebDriverWait(self.driver, 20).until(
+        location = WebDriverWait(self.driver, 20).until(
             EC.element_to_be_clickable(
-                (
-                    By.XPATH,"(//div[@class='overflow-auto']//a)[1]") ) )
+                (By.XPATH, location_xpath)
+            )
+        )
 
-        from_place.click()
+        location.click()
 
-        logger.info("Clicked the location from the list")
-
-        time.sleep(2)
+        logger.info("Location selected successfully")

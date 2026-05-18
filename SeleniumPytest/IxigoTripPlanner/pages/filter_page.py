@@ -1,12 +1,9 @@
 import time
-
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
 from utils.logger import LogGen
-
 
 logger = LogGen.loggen()
 
@@ -15,71 +12,60 @@ class FilterPage:
 
     def __init__(self, driver):
         self.driver = driver
+        self.wait = WebDriverWait(self.driver, 20)
 
-    # click international filter
-    def click_international(self):
-
-        logger.info("Waiting for International filter")
-
-        international = WebDriverWait(self.driver, 20).until(
-            EC.element_to_be_clickable(
-                (
-                    By.XPATH,
-                    "//span[contains(text(),'International')]"
-                )
-            )
+    # HELPER METHOD: Smooth scroll with animation buffer
+    def scroll_to_element(self, element):
+        self.driver.execute_script(
+            "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});",
+            element
         )
+        # CRITICAL: 0.8s buffer allows the CSS smooth scroll animation to finish before the JS click fires
+        time.sleep(0.8)
 
-        international.click()
+        # CLICK CATEGORY
 
-        logger.info("International filter selected")
+    def click_category(self, category_name):
+        logger.info(f"Selecting category : {category_name}")
 
-        time.sleep(2)
+        category_xpath = f"//span[contains(text(),'{category_name}')]"
+        category = self.wait.until(EC.element_to_be_clickable((By.XPATH, category_xpath)))
 
-    # click pollution free filter
-    def click_pollution_free(self):
+        self.scroll_to_element(category)
+        self.driver.execute_script("arguments[0].click();", category)
 
-        logger.info("Small scroll down")
+        logger.info(f"{category_name} selected")
+
+    # CLICK FILTER TYPE
+    def click_filter_type(self, filter_name):
+        logger.info(f"Selecting filter : {filter_name}")
 
         body = self.driver.find_element(By.TAG_NAME, "body")
-
         body.send_keys(Keys.ARROW_DOWN)
 
-        time.sleep(1)
-        logger.info("Waiting for Pollution Free filter")
+        filter_xpath = f"//span[contains(text(),'{filter_name}')]"
+        filter_element = self.wait.until(EC.element_to_be_clickable((By.XPATH, filter_xpath)))
 
-        pollution_free = WebDriverWait(self.driver, 20).until(
-            EC.element_to_be_clickable(
-                (
-                    By.XPATH,
-                    "//span[contains(text(),'Pollution Free')]"
-                )
-            )
-        )
+        self.scroll_to_element(filter_element)
+        self.driver.execute_script("arguments[0].click();", filter_element)
 
-        pollution_free.click()
+        logger.info(f"{filter_name} selected")
 
-        logger.info("Pollution Free filter selected")
+        # WAIT FOR COUNTRY CARDS TO LOAD
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "//div[contains(text(),'Malaysia')]")))
+        logger.info("Country cards loaded")
 
-        time.sleep(2)
+    # CLICK COUNTRY
+    def click_country(self, country_name):
+        logger.info(f"Selecting country : {country_name}")
 
+        country_xpath = f"//div[contains(text(),'{country_name}')]"
+        country = self.wait.until(EC.element_to_be_clickable((By.XPATH, country_xpath)))
 
-    # click Malaysia card
-    def click_malaysia(self):
+        self.scroll_to_element(country)
+        self.driver.execute_script("arguments[0].click();", country)
+        logger.info(f"{country_name} selected")
 
-        logger.info("Waiting for Malaysia location")
-
-        malaysia = WebDriverWait(self.driver, 20).until(
-            EC.element_to_be_clickable(
-                (
-                    By.XPATH,
-                    "//div[contains(text(),'Malaysia')]"
-                )
-            )
-        )
-
-        malaysia.click()
-
-        logger.info("Malaysia selected")
-
-        time.sleep(2)
+        # PAGE TRANSITION BUFFER: Wait a moment for the new page DOM to start rendering
+        # before the script hands off to LocationPage.
+        time.sleep(1.5)

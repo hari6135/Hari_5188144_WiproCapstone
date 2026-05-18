@@ -1,11 +1,8 @@
 import time
-
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
 from utils.logger import LogGen
-
 
 logger = LogGen.loggen()
 
@@ -14,47 +11,49 @@ class FlightPage:
 
     def __init__(self, driver):
         self.driver = driver
+        # dynamic wait
+        self.wait = WebDriverWait(self.driver, 20)
 
-    # switch to flight result tab
+        # Locators
+        self.first_flight_details_xpath = "(//p[contains(text(),'Flight Details')])[1]"
+
+    # Scroll down function
+    def scroll_to_element(self, element):
+        self.driver.execute_script(
+            "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});",
+            element
+        )
+        time.sleep(0.8)
+
+    # SWITCH TO FLIGHT RESULT TAB
     def switch_to_flight_tab(self):
-
         logger.info("Switching to flight results tab")
 
+        # Get all window handles and switch to the newest one
         all_windows = self.driver.window_handles
-
         self.driver.switch_to.window(all_windows[-1])
 
-        time.sleep(2)
+        # WAIT: Instead of time.sleep(2), wait for the browser to signal
+        # that the new page's DOM has finished loading completely.
+        self.wait.until(
+            lambda driver: driver.execute_script("return document.readyState") == "complete"
+        )
 
-    # click first Flight Details
+        logger.info("Switched to flight tab and page is fully loaded")
+
+    # CLICK FIRST FLIGHT DETAILS
     def click_first_flight_details(self):
-        logger.info("Scrolling down")
+        logger.info("Waiting for first Flight Details button")
 
-        self.driver.execute_script("window.scrollBy(0,300)")
-
-        time.sleep(2)
-
-        logger.info("Waiting for Flight Details button")
-
-        flight_details = WebDriverWait(self.driver, 20).until(
-            EC.element_to_be_clickable(
-                (
-                    By.XPATH,
-                    "(//p[contains(text(),'Flight Details')])[1]"
-                )
-            )
+        # Wait dynamically for the button to exist and be clickable
+        flight_details = self.wait.until(
+            EC.element_to_be_clickable((By.XPATH, self.first_flight_details_xpath))
         )
 
-        self.driver.find_element(By.TAG_NAME, "body")
+        self.scroll_to_element(flight_details)
 
-        self.driver.execute_script(
-            "window.scrollBy(0, 5)"
-        )
+        #  Use JS Click to avoid overlapping
+        self.driver.execute_script("arguments[0].click();", flight_details)
 
-        time.sleep(1)
-
-        flight_details.click()
-
-        logger.info("First Flight Details clicked")
-
-        time.sleep(3)
+        logger.info("First Flight Details clicked successfully")
+        time.sleep(1.5)

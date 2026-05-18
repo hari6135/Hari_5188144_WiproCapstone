@@ -1,5 +1,4 @@
 import pytest
-import time
 
 from selenium import webdriver
 
@@ -25,8 +24,9 @@ def driver():
 
     browser = ConfigReader.get("browser").strip().lower()
     base_url = ConfigReader.get("base_url").strip()
+    timeout = int(ConfigReader.get("timeout"))
 
-    print(f"Browser from config: {browser}")
+    logger.info(f"Browser from config : {browser}")
 
     # CHROME
     if browser == "chrome":
@@ -38,8 +38,7 @@ def driver():
         chrome_options.add_argument("--disable-infobars")
         chrome_options.add_argument("--disable-extensions")
 
-        driver = webdriver.Chrome()
-        driver.maximize_window()
+        driver = webdriver.Chrome(options=chrome_options)
 
     # EDGE
     else:
@@ -51,8 +50,7 @@ def driver():
         edge_options.add_argument("--disable-infobars")
         edge_options.add_argument("--disable-extensions")
 
-        driver = webdriver.Edge()
-        driver.maximize_window()
+        driver = webdriver.Edge(options=edge_options)
 
     logger.info(f"Opened Browser : {browser}")
 
@@ -60,37 +58,43 @@ def driver():
 
     logger.info(f"Loaded URL : {base_url}")
 
-    # wait for ixigo page to load
-    time.sleep(2)
+    # wait until page fully loads
+    WebDriverWait(driver, timeout).until(
+        lambda d: d.execute_script("return document.readyState") == "complete"
+    )
 
-    # close popup
-    # wait for ixigo page load
-    time.sleep(2)
+    logger.info("Page loaded successfully")
 
+    # HANDLE POPUP
     try:
 
-        # wait for popup iframe
-        WebDriverWait(driver, 20).until(
-            EC.frame_to_be_available_and_switch_to_it((By.ID, "wiz-iframe-intent") ) )
+        logger.info("Checking for popup")
 
-        # wait for close button inside iframe
-        popup_close = WebDriverWait(driver, 20).until(  EC.element_to_be_clickable((By.ID, "closeButton") ) )
+        WebDriverWait(driver, 10).until(
+            EC.frame_to_be_available_and_switch_to_it(
+                (By.ID, "wiz-iframe-intent")
+            )
+        )
 
-        # close popup
+        popup_close = WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable(
+                (By.ID, "closeButton")
+            )
+        )
+
         popup_close.click()
 
-        # switch back to main page
         driver.switch_to.default_content()
 
-        print("Popup closed")
+        logger.info("Popup closed successfully")
 
-    except:
-        print("Popup not found")
+    except Exception as e:
 
+        logger.info(f"No popup displayed : {e}")
 
     yield driver
 
-    time.sleep(3)
+    logger.info("Closing Browser")
 
     driver.quit()
 
