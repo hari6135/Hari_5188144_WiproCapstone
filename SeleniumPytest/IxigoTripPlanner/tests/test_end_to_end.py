@@ -95,7 +95,7 @@ def test_start_page(
     # LOCATION PAGE
     location_page = LocationPage(driver)
 
-    # GOOGLE MAP PAGE
+    # Google Maps PAGE
     google_map = GoogleMapPage(driver)
 
     # FLIGHT PAGE

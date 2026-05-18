@@ -1,0 +1,16 @@
+[32mINFO    [0m root:conftest.py:22 ==================================================
+[32mINFO    [0m root:conftest.py:23 Starting Test
+[32mINFO    [0m root:conftest.py:29 Browser from config : chrome
+[32mINFO    [0m root:conftest.py:55 Opened Browser : chrome
+[32mINFO    [0m root:conftest.py:59 Loaded URL : https://www.ixigo.com/
+[32mINFO    [0m root:conftest.py:66 Page loaded successfully
+[32mINFO    [0m root:conftest.py:71 Checking for popup
+[32mINFO    [0m root:conftest.py:89 Popup closed successfully
+[32mINFO    [0m root:test_cases.py:77 ========== TEST : PLAN PAGE NAVIGATION ==========
+[32mINFO    [0m root:planner_page.py:27 Waiting for Plan button
+[32mINFO    [0m root:planner_page.py:40 Plan page opened
+[32mINFO    [0m root:screenshot_util.py:32 Screenshot saved at: reports/screenshots/plan_page_navigation_20260519_024008.png
+[32mINFO    [0m root:test_cases.py:90 PLAN PAGE TEST PASSED
+[32mINFO    [0m root:conftest.py:97 Closing Browser
+[32mINFO    [0m root:conftest.py:101 Browser Closed
+[32mINFO    [0m root:conftest.py:102 ==================================================
