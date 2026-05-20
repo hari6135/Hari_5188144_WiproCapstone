@@ -1,3 +1,4 @@
+import os
 import pytest
 
 from selenium import webdriver
@@ -12,13 +13,11 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 from utils.config_reader import ConfigReader
 from utils.logger import LogGen
 
-
 logger = LogGen.loggen()
 
 
 @pytest.fixture(scope="function")
 def driver():
-
     logger.info("==================================================")
     logger.info("Starting Test")
 
@@ -99,4 +98,17 @@ def driver():
     driver.quit()
 
     logger.info("Browser Closed")
-    logger.info("==================================================")
+    logger.info("------------------------------------------------")
+
+
+# Allure test
+def pytest_unconfigure(config):
+    """
+    This built-in Pytest hook runs exactly once after
+    all tests have finished and the browsers are closed.
+    """
+    print("-------TESTS COMPLETE! GENERATING AND OPENING ALLURE REPORT--------")
+    print("-------------------------------------------------------\n")
+
+    # Automatically triggers the terminal command to open the report
+    os.system("allure serve reports/allure-results")

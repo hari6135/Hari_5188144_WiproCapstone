@@ -65,6 +65,7 @@ def planner_flow(driver):
 
 
 # POSITIVE TEST CASE 1
+# Verify Plan Page Navigation
 
 @pytest.mark.smoke
 @allure.title("Verify Plan Page Navigation")
@@ -87,7 +88,7 @@ def test_plan_page_navigation(driver):
 
 
 # POSITIVE TEST CASE 2
-
+# Verify Travel Month Selection
 @pytest.mark.regression
 @allure.title("Verify Travel Month Selection")
 @allure.description("Tests if selecting a travel month updates the page accordingly.")
@@ -111,6 +112,7 @@ def test_travel_month_selection(driver):
 
 
 # POSITIVE TEST CASE 3
+# Verify Filter Selection
 
 @pytest.mark.regression
 @allure.title("Verify Filter Selection")
@@ -137,7 +139,7 @@ def test_filter_selection(driver):
 
 
 # POSITIVE TEST CASE 4
-
+# Verify Location Card Selection
 @pytest.mark.regression
 @allure.title("Verify Location Card Selection")
 @allure.description("Tests if a specific location card can be found and selected.")
@@ -170,6 +172,8 @@ def test_location_card_selection(driver):
     assert location_name.lower() in driver.page_source.lower()
 
     logger.info("LOCATION CARD TEST PASSED")
+
+    logger.info("========== POSITIVE  TEST : COMPLETED ==========")
 
 
 # NEGATIVE TEST CASE 1
@@ -216,6 +220,8 @@ def test_invalid_location_search(driver):
 
 
 # NEGATIVE TEST CASE 2
+# Verify Book Now Button Not Available
+
 @pytest.mark.negative
 @allure.title("Negative: Verify Book Now Button Not Available")
 @allure.description("Tests if the Book Now button is successfully hidden when an invalid 'From' location is selected.")
@@ -276,11 +282,11 @@ def test_book_now_button_not_available(driver):
     filter_page.click_filter_type(filter_type)
     filter_page.click_country(country_name)
 
-    logger.info("Malaysia selected successfully")
+    logger.info("Location selected successfully")
 
     ScreenshotUtil.capture_screenshot(
         driver,
-        "malaysia_page"
+        "Location_page"
     )
 
     # SCROLL TO HOW TO REACH
@@ -402,3 +408,4 @@ def test_book_now_button_not_available(driver):
     logger.info(
         "========== BOOK NOW NEGATIVE TEST PASSED =========="
     )
+    logger.info("========== NEGATIVE  TEST : COMPLETED ==========")

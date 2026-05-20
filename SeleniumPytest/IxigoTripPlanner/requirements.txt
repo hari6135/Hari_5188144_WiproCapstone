@@ -5,3 +5,4 @@ pytest-order
 pytest-html
 allure-pytest
 openpyxl
+allure-python-commons

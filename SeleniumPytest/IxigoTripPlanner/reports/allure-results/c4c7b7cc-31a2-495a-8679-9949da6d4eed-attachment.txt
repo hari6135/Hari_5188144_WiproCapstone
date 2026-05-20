@@ -1,0 +1,19 @@
+[32mINFO    [0m root:conftest.py:21 ==================================================
+[32mINFO    [0m root:conftest.py:22 Starting Test
+[32mINFO    [0m root:conftest.py:28 Browser from config : chrome
+[32mINFO    [0m root:conftest.py:54 Opened Browser : chrome
+[32mINFO    [0m root:conftest.py:58 Loaded URL : https://www.ixigo.com/
+[32mINFO    [0m root:conftest.py:65 Page loaded successfully
+[32mINFO    [0m root:conftest.py:70 Checking for popup
+[32mINFO    [0m root:conftest.py:88 Popup closed successfully
+[32mINFO    [0m root:test_cases.py:96 ========== TEST : TRAVEL MONTH ==========
+[32mINFO    [0m root:planner_page.py:27 Waiting for Plan button
+[32mINFO    [0m root:planner_page.py:40 Plan page opened
+[32mINFO    [0m root:planner_page.py:45 Waiting for Travel Month
+[32mINFO    [0m root:planner_page.py:58 Travel Month clicked
+[32mINFO    [0m root:planner_page.py:73 August selected
+[32mINFO    [0m root:screenshot_util.py:32 Screenshot saved at: reports/screenshots/travel_month_selection_20260520_113333.png
+[32mINFO    [0m root:test_cases.py:111 TRAVEL MONTH TEST PASSED
+[32mINFO    [0m root:conftest.py:96 Closing Browser
+[32mINFO    [0m root:conftest.py:100 Browser Closed
+[32mINFO    [0m root:conftest.py:101 ------------------------------------------------
