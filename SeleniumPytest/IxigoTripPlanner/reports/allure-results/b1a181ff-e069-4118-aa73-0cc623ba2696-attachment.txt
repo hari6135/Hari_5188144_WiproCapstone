@@ -1,0 +1,29 @@
+[32mINFO    [0m root:conftest.py:21 ==================================================
+[32mINFO    [0m root:conftest.py:22 Starting Test
+[32mINFO    [0m root:conftest.py:28 Browser from config : chrome
+[32mINFO    [0m root:conftest.py:54 Opened Browser : chrome
+[32mINFO    [0m root:conftest.py:58 Loaded URL : https://www.ixigo.com/
+[32mINFO    [0m root:conftest.py:65 Page loaded successfully
+[32mINFO    [0m root:conftest.py:70 Checking for popup
+[32mINFO    [0m root:conftest.py:88 Popup closed successfully
+[32mINFO    [0m root:test_cases.py:121 ========== TEST : FILTER SELECTION ==========
+[32mINFO    [0m root:planner_page.py:27 Waiting for Plan button
+[32mINFO    [0m root:planner_page.py:40 Plan page opened
+[32mINFO    [0m root:planner_page.py:45 Waiting for Travel Month
+[32mINFO    [0m root:planner_page.py:58 Travel Month clicked
+[32mINFO    [0m root:planner_page.py:73 August selected
+[32mINFO    [0m root:planner_page.py:78 Waiting for From location field
+[32mINFO    [0m root:planner_page.py:88 From location field clicked
+[32mINFO    [0m root:planner_page.py:93 Entering from location : Chennai
+[32mINFO    [0m root:planner_page.py:105 From location entered
+[32mINFO    [0m root:planner_page.py:110 Selecting location : Chennai
+[32mINFO    [0m root:planner_page.py:122 Location selected successfully
+[32mINFO    [0m root:filter_page.py:33 Selecting category : International
+[32mINFO    [0m root:filter_page.py:41 International selected
+[32mINFO    [0m root:filter_page.py:45 Selecting filter : Rain
+[32mINFO    [0m root:filter_page.py:56 Rain selected
+[32mINFO    [0m root:screenshot_util.py:32 Screenshot saved at: reports/screenshots/filter_selection_20260523_201850.png
+[32mINFO    [0m root:test_cases.py:138 FILTER TEST PASSED
+[32mINFO    [0m root:conftest.py:96 Closing Browser
+[32mINFO    [0m root:conftest.py:100 Browser Closed
+[32mINFO    [0m root:conftest.py:101 ------------------------------------------------

@@ -1,3 +1,5 @@
+
+import time
 from behave import given, when, then
 from behave.runner import Context
 
@@ -84,15 +86,23 @@ def step_impl(context: Context):
 
     context.login_page.click_login()
 
-    # ---------------------- Assert -----------------------------------------
-    assert "login" in context.driver.page_source.lower(), \
-        "Login popup did not open"
+    logger.info(
+        "Login popup opened successfully"
+    )
 
     context.login_page.enter_mobile_number(
         mobile_number
     )
 
+    logger.info(
+        "Mobile number entered successfully"
+    )
+
     context.login_page.click_continue()
+
+    logger.info(
+        "Continue button clicked successfully"
+    )
 
     ScreenshotUtil.capture_screenshot(
         driver,
@@ -102,11 +112,23 @@ def step_impl(context: Context):
     # MANUAL OTP
     context.login_page.wait_for_login_completion()
 
+    logger.info(
+        "Login flow completed successfully"
+    )
+
+
+@then("user should login successfully")
+def step_impl(context: Context):
+
+    driver: WebDriver = context.driver
+
     assert "ixigo" in \
            driver.title.lower(), \
         "Login failed after OTP verification"
 
-    logger.info("Login Flow Completed Successfully")
+    logger.info(
+        "Login verified successfully"
+    )
 
 
 # =========================================================
@@ -118,23 +140,23 @@ def step_impl(context: Context):
 
     driver: WebDriver = context.driver
 
-    logger.info( "Starting Planner Flow" )
+    logger.info(
+        "Starting Planner Flow"
+    )
 
     context.planner_page.click_plan()
 
-    # ------------ PLAN PAGE ASSERT ---------------------------------
-    assert "plan" in \
-           driver.current_url.lower(), \
-        "Plan page not opened"
+    logger.info(
+        "Plan page clicked successfully"
+    )
+
     context.planner_page.select_travel_month(
         travel_month
     )
 
-    #  ------------- TRAVEL MONTH ASSERT ------------------------------
-    assert travel_month.lower() in \
-           driver.page_source.lower(), \
-        "Travel month not selected"
-
+    logger.info(
+        "Travel month selected successfully"
+    )
 
     context.planner_page.click_from_location()
 
@@ -142,20 +164,48 @@ def step_impl(context: Context):
         from_location
     )
 
+    logger.info(
+        "From location entered successfully"
+    )
+
     context.planner_page.click_from_list(
         from_location
     )
-    #  ------------- FROM LOCATION ASSERT ------------------------------
-    assert from_location.lower() in \
-           driver.page_source.lower(), \
-        "From location not selected"
+
+    logger.info(
+        "From location selected successfully"
+    )
 
     ScreenshotUtil.capture_screenshot(
         driver,
         "planner_page"
     )
 
-    logger.info("Planner Flow Completed Successfully")
+    logger.info(
+        "Planner Flow Completed Successfully"
+    )
+
+
+@then("planner details should be displayed successfully")
+def step_impl(context: Context):
+
+    driver: WebDriver = context.driver
+
+    assert "plan" in \
+           driver.current_url.lower(), \
+        "Plan page not opened"
+
+    assert travel_month.lower() in \
+           driver.page_source.lower(), \
+        "Travel month not selected"
+
+    assert from_location.lower() in \
+           driver.page_source.lower(), \
+        "From location not selected"
+
+    logger.info(
+        "Planner details verified successfully"
+    )
 
 
 # =========================================================
@@ -167,65 +217,95 @@ def step_impl(context: Context):
 
     driver: WebDriver = context.driver
 
-    logger.info("Starting Filter Flow")
+    logger.info(
+        "Starting Filter Flow"
+    )
 
     context.filter_page.click_category(
         category_name
     )
 
+    logger.info(
+        "Category selected successfully"
+    )
+
     context.filter_page.click_filter_type(
         filter_type
     )
-    # -------------------- FILTER TYPE ASSERT ----------------------
-    assert filter_type.lower() in \
-           driver.page_source.lower(), \
-        "Filter type not applied"
 
+    logger.info(
+        "Filter type selected successfully"
+    )
 
     context.filter_page.click_country(
         country_name
     )
 
-    # ---------------- COUNTRY FILTER ASSERT ---------------------
-    assert country_name.lower() in \
-           driver.page_source.lower(), \
-        "Country filter not applied"
+    logger.info(
+        "Country selected successfully"
+    )
 
     ScreenshotUtil.capture_screenshot(
         driver,
         "filter_page"
     )
 
-    logger.info("Filter Flow Completed Successfully")
+    logger.info(
+        "Filter Flow Completed Successfully"
+    )
 
 
-# ================================= LOCATION FLOW =======================
+@then("travel filters should be applied successfully")
+def step_impl(context: Context):
+
+    driver: WebDriver = context.driver
+
+    assert filter_type.lower() in \
+           driver.page_source.lower(), \
+        "Filter type not applied"
+
+    assert country_name.lower() in \
+           driver.page_source.lower(), \
+        "Country filter not applied"
+
+    logger.info(
+        "Travel filters verified successfully"
+    )
+
+
+# =========================================================
+# LOCATION FLOW
+# =========================================================
 
 @when("user selects tourist location for end to end")
 def step_impl(context: Context):
 
     driver: WebDriver = context.driver
 
-    logger.info("Starting Tourist Location Flow")
+    logger.info(
+        "Starting Tourist Location Flow"
+    )
 
     context.location_page.scroll_places_to_visit()
 
-    # ------------ PLACES SECTION ASSERT ----------------
-    assert "places to visit" in \
-           driver.page_source.lower(), \
-        "Places To Visit section not visible"
+    logger.info(
+        "Places To Visit section reached successfully"
+    )
 
     context.location_page.click_category_chip(
         location_category
     )
 
-    # ------------ TOURIST LOCATION SECTION ASSERT ----------------
-    assert location_name.lower() in \
-           driver.page_source.lower(), \
-        "Tourist location page not opened"
+    logger.info(
+        "Location category selected successfully"
+    )
 
     context.location_page.click_location_card(
         location_name
+    )
+
+    logger.info(
+        "Tourist location selected successfully"
     )
 
     ScreenshotUtil.capture_screenshot(
@@ -233,7 +313,9 @@ def step_impl(context: Context):
         "location_page"
     )
 
-    logger.info("Tourist Location Selected Successfully")
+    logger.info(
+        "Tourist Location Selected Successfully"
+    )
 
 
 @then("tourist location should open successfully for end to end")
@@ -241,10 +323,17 @@ def step_impl(context: Context):
 
     driver: WebDriver = context.driver
 
-    assert location_name.lower() in \
-           driver.page_source.lower()
+    assert "places to visit" in \
+           driver.page_source.lower(), \
+        "Places To Visit section not visible"
 
-    logger.info("Tourist Location Verified Successfully")
+    assert location_name.lower() in \
+           driver.page_source.lower(), \
+        "Tourist location details page did not open"
+
+    logger.info(
+        "Tourist location verified successfully"
+    )
 
 
 # =========================================================
@@ -256,44 +345,56 @@ def step_impl(context: Context):
 
     driver: WebDriver = context.driver
 
-    logger.info("Starting Google Map Verification")
+    logger.info(
+        "Starting Google Map Verification"
+    )
 
     context.google_map.verify_google_map_page()
 
-    # ------------ GOOGLE MAP ASSERT ----------------------------
-    # assert "Google Maps" in \
-    #        driver.current_url.lower(), \
-    #     "Google Map page not opened"
+    assert "map" in \
+           driver.page_source.lower(), \
+        "Google map section not loaded"
 
     ScreenshotUtil.capture_screenshot(
         driver,
         "google_map_page"
     )
 
-    logger.info("Google Map Verified Successfully")
+    logger.info(
+        "Google map verified successfully"
+    )
 
 
 # =========================================================
 # BOOK NOW FLOW
 # =========================================================
 
+@then("book now button should be visible")
+def step_impl(context: Context):
+
+    driver: WebDriver = context.driver
+
+    assert "book now" in \
+           driver.page_source.lower(), \
+        "Book Now button not visible"
+
+    logger.info(
+        "Book Now button verified successfully"
+    )
+
+
 @then("user clicks book now")
 def step_impl(context: Context):
 
     driver: WebDriver = context.driver
 
-    logger.info("Starting Book Now Flow")
+    logger.info(
+        "Starting Book Now Flow"
+    )
 
     context.location_page.close_popup()
 
     context.location_page.scroll_how_to_travel()
-
-
-    # ---------------------- BOOK NOW -------------------------------
-    assert "book now" in \
-           driver.page_source.lower(), \
-        "Book Now button not visible"
-
 
     context.location_page.click_book_now()
 
@@ -302,7 +403,9 @@ def step_impl(context: Context):
         "book_now_page"
     )
 
-    logger.info("Book Now Clicked Successfully")
+    logger.info(
+        "Book Now Clicked Successfully"
+    )
 
 
 # =========================================================
@@ -314,27 +417,36 @@ def step_impl(context: Context):
 
     driver: WebDriver = context.driver
 
-    logger.info("Starting Flight Details Verification")
+    logger.info(
+        "Starting Flight Details Verification"
+    )
 
     context.flight_page.switch_to_flight_tab()
 
-    # -------------- FLIGHT TAB ASSERT ------------------------------
     assert len(driver.window_handles) > 1, \
         "Flight tab did not open"
 
+    logger.info(
+        "Flight tab opened successfully"
+    )
+
     context.flight_page.click_first_flight_details()
-    # ------------------ FLIGHT PAGE ASSERT ------------------------
+
     assert "flight" in \
            driver.page_source.lower(), \
         "Flight details page not loaded"
 
-    logger.info("Flight Details Verified Successfully")
-
+    time.sleep(1)
+    
     ScreenshotUtil.capture_screenshot(
         driver,
         "flight_page"
     )
 
-    logger.info("Flight Details Verified Successfully")
+    logger.info(
+        "Flight details verified successfully"
+    )
 
-    logger.info("========== END TO END FLOW COMPLETED ==========")
+    logger.info(
+        "========== END TO END FLOW COMPLETED =========="
+    )

@@ -1,3 +1,4 @@
+
 Feature: Ixigo Trip Planner End To End Flow
 
   Background:
@@ -22,3 +23,4 @@ Feature: Ixigo Trip Planner End To End Flow
     And user clicks book now
 
     Then flight details page should open successfully
+

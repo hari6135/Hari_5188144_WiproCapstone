@@ -1,0 +1,72 @@
+[32mINFO    [0m root:conftest.py:21 ==================================================
+[32mINFO    [0m root:conftest.py:22 Starting Test
+[32mINFO    [0m root:conftest.py:28 Browser from config : chrome
+[32mINFO    [0m root:conftest.py:54 Opened Browser : chrome
+[32mINFO    [0m root:conftest.py:58 Loaded URL : https://www.ixigo.com/
+[32mINFO    [0m root:conftest.py:65 Page loaded successfully
+[32mINFO    [0m root:conftest.py:70 Checking for popup
+[32mINFO    [0m root:conftest.py:88 Popup closed successfully
+[32mINFO    [0m root:test_e2e.py:62 ========== STARTING END TO END TRIP PLANNER ==========
+[32mINFO    [0m root:login_page.py:28 Waiting for Login button
+[32mINFO    [0m root:login_page.py:38 Login button clicked
+[32mINFO    [0m root:login_page.py:43 Entering mobile number
+[32mINFO    [0m root:login_page.py:55 Mobile number entered
+[32mINFO    [0m root:login_page.py:60 Clicking Continue button
+[32mINFO    [0m root:login_page.py:70 Continue button clicked
+[32mINFO    [0m root:screenshot_util.py:32 Screenshot saved at: reports/screenshots/login_page_20260523_201949.png
+[32mINFO    [0m root:login_page.py:74 Waiting for login completion
+[32mINFO    [0m root:login_page.py:78 Login completed successfully
+[32mINFO    [0m root:planner_page.py:27 Waiting for Plan button
+[32mINFO    [0m root:planner_page.py:40 Plan page opened
+[32mINFO    [0m root:planner_page.py:45 Waiting for Travel Month
+[32mINFO    [0m root:planner_page.py:58 Travel Month clicked
+[32mINFO    [0m root:planner_page.py:73 August selected
+[32mINFO    [0m root:planner_page.py:78 Waiting for From location field
+[32mINFO    [0m root:planner_page.py:88 From location field clicked
+[32mINFO    [0m root:planner_page.py:93 Entering from location : Chennai
+[32mINFO    [0m root:planner_page.py:105 From location entered
+[32mINFO    [0m root:planner_page.py:110 Selecting location : Chennai
+[32mINFO    [0m root:planner_page.py:122 Location selected successfully
+[32mINFO    [0m root:screenshot_util.py:32 Screenshot saved at: reports/screenshots/planner_page_20260523_202016.png
+[32mINFO    [0m root:filter_page.py:33 Selecting category : International
+[32mINFO    [0m root:filter_page.py:41 International selected
+[32mINFO    [0m root:filter_page.py:45 Selecting filter : Rain
+[32mINFO    [0m root:filter_page.py:56 Rain selected
+[32mINFO    [0m root:filter_page.py:63 Selecting country : Malaysia
+[32mINFO    [0m root:filter_page.py:73 Malaysia selected
+[32mINFO    [0m root:filter_page.py:79 Page transition to Location Page started
+[32mINFO    [0m root:screenshot_util.py:32 Screenshot saved at: reports/screenshots/filter_page_20260523_202021.png
+[32mINFO    [0m root:location_page.py:30 Scrolling down to Places To Visit section
+[32mINFO    [0m root:location_page.py:35 Scrolled down smoothly
+[32mINFO    [0m root:location_page.py:39 Selecting category : art
+[32mINFO    [0m root:location_page.py:49 art selected
+[32mINFO    [0m root:location_page.py:53 Waiting for location card : Penang Street Art
+[32mINFO    [0m root:location_page.py:60 Penang Street Art selected
+[32mINFO    [0m root:screenshot_util.py:32 Screenshot saved at: reports/screenshots/location_page_20260523_202025.png
+[32mINFO    [0m root:map_page.py:22 Waiting for Directions button
+[32mINFO    [0m root:map_page.py:35 Clicking Directions button
+[32mINFO    [0m root:map_page.py:41 Waiting for Google Maps tab to open...
+[32mINFO    [0m root:map_page.py:53 Switched to new tab. Waiting for title to load...
+[32mINFO    [0m root:map_page.py:58 Google Maps Title : 5°24'52.6"N 100°20'17.7"E - Google Maps
+[32mINFO    [0m root:map_page.py:62 Google Maps page verified
+[32mINFO    [0m root:screenshot_util.py:32 Screenshot saved at: reports/screenshots/google_map_page_20260523_202027.png
+[32mINFO    [0m root:map_page.py:67 Google Maps tab closed
+[32mINFO    [0m root:map_page.py:71 Switched back to Ixigo page
+[32mINFO    [0m root:screenshot_util.py:32 Screenshot saved at: reports/screenshots/google_map_page_20260523_202027.png
+[32mINFO    [0m root:location_page.py:67 Closing popup
+[32mINFO    [0m root:location_page.py:76 Popup closed successfully
+[32mINFO    [0m root:location_page.py:80 Triggering page scroll to load bottom sections...
+[32mINFO    [0m root:location_page.py:86 Locating the Book Now button...
+[32mINFO    [0m root:location_page.py:94 Scrolled smoothly to Book Now section
+[32mINFO    [0m root:location_page.py:97 Waiting for Book Now button
+[32mINFO    [0m root:location_page.py:105 Book Now clicked
+[32mINFO    [0m root:screenshot_util.py:32 Screenshot saved at: reports/screenshots/book_now_page_20260523_202032.png
+[32mINFO    [0m root:flight_page.py:30 Switching to flight results tab
+[32mINFO    [0m root:flight_page.py:42 Switched to flight tab and page is fully loaded
+[32mINFO    [0m root:flight_page.py:46 Waiting for first Flight Details button
+[32mINFO    [0m root:flight_page.py:58 First Flight Details clicked successfully
+[32mINFO    [0m root:screenshot_util.py:32 Screenshot saved at: reports/screenshots/flight_page_20260523_202037.png
+[32mINFO    [0m root:test_e2e.py:195 ========== END TO END TRIP PLANNER COMPLETED SUCCESSFULLY ==========
+[32mINFO    [0m root:conftest.py:96 Closing Browser
+[32mINFO    [0m root:conftest.py:100 Browser Closed
+[32mINFO    [0m root:conftest.py:101 ------------------------------------------------

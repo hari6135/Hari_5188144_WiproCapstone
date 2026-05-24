@@ -10,7 +10,7 @@ logger = LogGen.loggen()
 
 class FilterPage:
 
-    # DYNAMIC LOCATOR
+    # LOCATOR
     CATEGORY_XPATH = "//span[contains(text(),'{name}')]"
     FILTER_XPATH = "//span[contains(text(),'{name}')]"
     COUNTRY_XPATH = "//div[contains(text(),'{name}')]"
