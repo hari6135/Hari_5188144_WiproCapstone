@@ -1,20 +1,10 @@
-# Wipro Training Repository
-
-## Automation Testing | Python | BDD | Robot Framework | Data Handling
-
-This repository contains multiple training and practice projects developed during Wipro learning and automation training.
-
-The repository includes:
-
-- Selenium PyTest Framework
-=======
 # Ixigo Trip Planner BDD Automation Framework
 
 ## Selenium WebDriver + Behave BDD + Page Object Model + Allure Reports
 
 ---
 
-# Project Overview
+## Project Overview
 
 The Ixigo Trip Planner Automation Framework is developed using Selenium WebDriver with Python Behave BDD framework to automate the major functionalities of the ixigo Trip Planner web application.
 
@@ -30,119 +20,297 @@ The framework follows the Page Object Model (POM) design pattern for better main
 
 ---
 
-# Features
+## Features
 
 - Selenium WebDriver Automation
->>>>>>> 2624f0f7a1b518dcbd6ecc9b78b8333dd20cde71
 - Behave BDD Framework
-- Robot Framework Automation
-- Python Practice Programs
-- NumPy & Pandas Programs
-- Automation Utilities and Reports
+- Feature Files and Step Definitions
+- Page Object Model (POM)
+- Data-Driven Testing using Excel
+- Professional Logging
+- Screenshot Capture
+- Allure Reporting
+- Positive & Negative Testing
+- End-to-End Workflow Validation
 
 ---
 
-# Technologies Used
+## Tech Stack
 
-| Technology | Purpose |
+| Technology | Usage |
 |---|---|
 | Python | Programming Language |
-| Selenium WebDriver | Web Automation |
-| PyTest | Testing Framework |
-| Behave | BDD Automation |
-| Robot Framework | Automation Testing |
-| NumPy | Numerical Computing |
-| Pandas | Data Analysis |
+| Selenium WebDriver | Browser Automation |
+| Behave | BDD Framework |
 | Allure Reports | Reporting |
-| HTML/CSS | Frontend Practice |
+| OpenPyXL | Excel Data Handling |
+| Logging Module | Execution Logs |
+| Chrome Browser | Test Execution |
 
 ---
 
-# Repository Structure
+## Framework Architecture
 
 ```text
-WiproTraining
+IxigoPlannerBDD
 │
-├── BDD
-├── RobotFramework
-├── Selenium
-├── PythonProject
-├── NumPy
-├── Pandas
-├── Reports
-└── Practice Programs
+├── config
+├── features
+│   ├── end_to_end.feature
+│   ├── test_cases.feature
+│   └── steps
+│       ├── end_to_end_steps.py
+│       └── test_cases_steps.py
+│
+├── logs
+├── pages
+├── reports
+│   ├── allure-results
+│   └── allure-report
+│
+├── screenshots
+├── testdata
+├── utils
+├── environment.py
+├── behave.ini
+├── runtest.bat
+└── requirements.txt
 ```
 
 ---
 
-# Key Features
+## BDD Implementation
 
-- End-to-End Automation Testing
-- Page Object Model (POM)
-- Behavior Driven Development (BDD)
-- Data-Driven Testing
-- Logging and Reporting
-- Screenshot Capture
-- Python Practice Programs
-- Data Analysis using NumPy & Pandas
-- Robot Framework Test Automation
+The framework follows Behavior Driven Development using:
 
----
-
-# Automation Frameworks Included
-
-## Selenium PyTest Framework
-
-Features:
-- Selenium WebDriver
-- PyTest Framework
-- Allure Reports
-- Logging
-- Page Object Model
-- Data-Driven Testing
-
----
-
-## Behave BDD Framework
-
-Features:
-- Gherkin Syntax
 - Feature Files
-- Step Definitions
-- End-to-End Test Scenarios
-- Positive & Negative Testing
+- Step Definition Files
+- Gherkin Syntax
+- Given-When-Then Structure
+
+### Example
+
+```gherkin
+Scenario: Verify complete ixigo trip planner workflow
+
+Given user launches ixigo application
+
+When user performs login flow for end to end
+
+And user completes planner flow for end to end
+
+Then flight details page should open successfully
+```
 
 ---
 
-## Robot Framework
+## Test Coverage
 
-Features:
-- Keyword Driven Testing
-- Automated Test Execution
-- Reporting and Logging
-- Browser Automation
+### End-to-End Test Flow
 
----
+The framework validates the complete business workflow including:
 
-# Learning Outcomes
-
-This repository demonstrates practical experience in:
-
-- Automation Testing
-- Python Programming
-- Web Testing
-- Test Framework Design
-- Data Handling
-- Reporting and Debugging
-- Software Testing Concepts
+- User Login
+- Planner Navigation
+- Travel Month Selection
+- Source Location Selection
+- Travel Filter Application
+- Tourist Location Selection
+- Google Map Verification
+- Book Now Navigation
+- Flight Details Verification
 
 ---
 
-# Author
+## Positive Test Scenarios
 
-**Hariharan M**
+### Positive Test Scenario 1 – Plan Page Navigation
 
-Electronics and Communication Engineering  
-Automation Testing & Python Enthusiast
+- Validates successful navigation to planner page
+- Verifies Plan module loading
+- Checks planner URL navigation
+
+### Positive Test Scenario 2 – Travel Month Selection
+
+- Validates travel month selection
+- Reads travel month dynamically from Excel
+- Verifies selected month update successfully
+
+### Positive Test Scenario 3 – Filter Selection Validation
+
+- Validates category filter functionality
+- Selects International category
+- Applies Pollution Free filter
+- Verifies successful filter application
+
+### Positive Test Scenario 4 – Tourist Location Selection
+
+- Validates tourist location card selection
+- Selects destination country
+- Opens tourist location details page
+- Verifies successful navigation
 
 ---
+
+## Negative Test Scenarios
+
+### Negative Test Scenario 1 – Invalid Location Search
+
+- Enters invalid location value
+- Validates application error handling
+- Verifies invalid destination error message
+- Ensures unsupported location validation
+
+### Negative Test Scenario 2 – Book Now Button Validation
+
+- Selects unsupported route location
+- Navigates to How To Reach section
+- Verifies Book Now button absence
+- Ensures unavailable routes cannot be booked
+
+---
+
+## Test Environment
+
+| Component | Description |
+|---|---|
+| Operating System | Windows 10 |
+| IDE | PyCharm Unified Product |
+| Browser | Google Chrome |
+| Framework | Selenium WebDriver + Behave |
+| Reporting Tool | Allure Reports |
+| Design Pattern | Page Object Model |
+| Test Approach | Behavior Driven Development |
+
+---
+
+## Test Data Strategy
+
+The framework uses Excel files for dynamic test data handling.
+
+The framework reads:
+
+- Login Data
+- Planner Data
+- Filter Data
+- Tourist Location Data
+
+Benefits:
+
+- Maintainability
+- Reusability
+- Scalability
+
+---
+
+## Reporting
+
+### Allure Reports
+
+The framework integrates Allure Reports for professional execution reporting.
+
+Features include:
+
+- Step-by-step execution flow
+- Pass/Fail scenario status
+- Screenshot attachments
+- Execution history
+- Failure debugging
+- Execution summary
+
+---
+
+## Logging
+
+The framework uses Python logging module for detailed execution tracking.
+
+Execution logs include:
+
+- Browser launch details
+- Scenario execution flow
+- Assertions and validations
+- Error handling
+- Screenshot tracking
+
+Log location:
+
+```text
+logs/automation.log
+```
+
+---
+
+## Screenshot Capture
+
+Screenshots are automatically captured during important execution stages including:
+
+- Planner Page
+- Filter Page
+- Tourist Location Page
+- Google Map Verification
+- Invalid Location Validation
+- Flight Details Page
+
+---
+
+## Test Execution
+
+### Run End-to-End Feature
+
+```bash
+behave features/end_to_end.feature
+```
+
+### Run Test Cases Feature
+
+```bash
+behave features/test_cases.feature
+```
+
+---
+
+## Generate Allure Report
+
+```bash
+behave -f allure_behave.formatter:AllureFormatter -o reports/allure-results
+```
+
+### Open Allure Report
+
+```bash
+allure serve reports/allure-results
+```
+
+---
+
+## Test Summary
+
+- Total Scenarios Executed: 7
+- Scenarios Passed: 7
+- Scenarios Failed: 0
+- Automation Accuracy: 100%
+
+---
+
+## Conclusion
+
+The Selenium Behave BDD automation framework successfully validates the ixigo Trip Planner application using End-to-End, Positive and Negative testing approaches.
+
+The framework is developed using:
+
+- Selenium WebDriver
+- Behave BDD Framework
+- Page Object Model
+- Allure Reporting
+- Data-Driven Testing
+- Logging Framework
+
+The framework improves:
+
+- Test maintainability
+- Reusability
+- Scalability
+- Reporting quality
+- Automation reliability
+
+Overall, the project demonstrates a practical and professional BDD automation framework for real-world web application testing.
