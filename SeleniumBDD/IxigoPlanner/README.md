@@ -7,6 +7,33 @@ This repository contains multiple training and practice projects developed durin
 The repository includes:
 
 - Selenium PyTest Framework
+=======
+# Ixigo Trip Planner BDD Automation Framework
+
+## Selenium WebDriver + Behave BDD + Page Object Model + Allure Reports
+
+---
+
+# Project Overview
+
+The Ixigo Trip Planner Automation Framework is developed using Selenium WebDriver with Python Behave BDD framework to automate the major functionalities of the ixigo Trip Planner web application.
+
+The framework validates:
+
+- End-to-End Workflow
+- Positive Test Scenarios
+- Negative Test Scenarios
+- Data-Driven Testing
+- Behavior Driven Development (BDD)
+
+The framework follows the Page Object Model (POM) design pattern for better maintainability, scalability and reusability.
+
+---
+
+# Features
+
+- Selenium WebDriver Automation
+>>>>>>> 2624f0f7a1b518dcbd6ecc9b78b8333dd20cde71
 - Behave BDD Framework
 - Robot Framework Automation
 - Python Practice Programs

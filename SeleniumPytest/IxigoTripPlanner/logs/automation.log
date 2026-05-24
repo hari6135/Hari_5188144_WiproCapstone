@@ -243,3 +243,248 @@
 2026-05-20 11:35:00,394 : INFO : Closing Browser
 2026-05-20 11:35:02,866 : INFO : Browser Closed
 2026-05-20 11:35:02,866 : INFO : ------------------------------------------------
+2026-05-23 20:18:16,390 : INFO : ==================================================
+2026-05-23 20:18:16,391 : INFO : Starting Test
+2026-05-23 20:18:16,391 : INFO : Browser from config : chrome
+2026-05-23 20:18:18,829 : INFO : Opened Browser : chrome
+2026-05-23 20:18:19,557 : INFO : Loaded URL : https://www.ixigo.com/
+2026-05-23 20:18:19,672 : INFO : Page loaded successfully
+2026-05-23 20:18:19,672 : INFO : Checking for popup
+2026-05-23 20:18:22,431 : INFO : Popup closed successfully
+2026-05-23 20:18:22,432 : INFO : ========== TEST : PLAN PAGE NAVIGATION ==========
+2026-05-23 20:18:22,432 : INFO : Waiting for Plan button
+2026-05-23 20:18:25,553 : INFO : Plan page opened
+2026-05-23 20:18:25,783 : INFO : Screenshot saved at: reports/screenshots/plan_page_navigation_20260523_201825.png
+2026-05-23 20:18:25,793 : INFO : PLAN PAGE TEST PASSED
+2026-05-23 20:18:25,794 : INFO : Closing Browser
+2026-05-23 20:18:28,021 : INFO : Browser Closed
+2026-05-23 20:18:28,021 : INFO : ------------------------------------------------
+2026-05-23 20:18:28,026 : INFO : ==================================================
+2026-05-23 20:18:28,027 : INFO : Starting Test
+2026-05-23 20:18:28,027 : INFO : Browser from config : chrome
+2026-05-23 20:18:28,870 : INFO : Opened Browser : chrome
+2026-05-23 20:18:29,643 : INFO : Loaded URL : https://www.ixigo.com/
+2026-05-23 20:18:29,737 : INFO : Page loaded successfully
+2026-05-23 20:18:29,737 : INFO : Checking for popup
+2026-05-23 20:18:32,478 : INFO : Popup closed successfully
+2026-05-23 20:18:32,479 : INFO : ========== TEST : TRAVEL MONTH ==========
+2026-05-23 20:18:32,479 : INFO : Waiting for Plan button
+2026-05-23 20:18:36,515 : INFO : Plan page opened
+2026-05-23 20:18:36,515 : INFO : Waiting for Travel Month
+2026-05-23 20:18:36,542 : INFO : Travel Month clicked
+2026-05-23 20:18:36,589 : INFO : August selected
+2026-05-23 20:18:36,676 : INFO : Screenshot saved at: reports/screenshots/travel_month_selection_20260523_201836.png
+2026-05-23 20:18:36,690 : INFO : TRAVEL MONTH TEST PASSED
+2026-05-23 20:18:36,692 : INFO : Closing Browser
+2026-05-23 20:18:38,880 : INFO : Browser Closed
+2026-05-23 20:18:38,880 : INFO : ------------------------------------------------
+2026-05-23 20:18:38,883 : INFO : ==================================================
+2026-05-23 20:18:38,883 : INFO : Starting Test
+2026-05-23 20:18:38,884 : INFO : Browser from config : chrome
+2026-05-23 20:18:39,616 : INFO : Opened Browser : chrome
+2026-05-23 20:18:40,389 : INFO : Loaded URL : https://www.ixigo.com/
+2026-05-23 20:18:40,591 : INFO : Page loaded successfully
+2026-05-23 20:18:40,592 : INFO : Checking for popup
+2026-05-23 20:18:43,319 : INFO : Popup closed successfully
+2026-05-23 20:18:43,320 : INFO : ========== TEST : FILTER SELECTION ==========
+2026-05-23 20:18:43,320 : INFO : Waiting for Plan button
+2026-05-23 20:18:46,854 : INFO : Plan page opened
+2026-05-23 20:18:46,854 : INFO : Waiting for Travel Month
+2026-05-23 20:18:46,881 : INFO : Travel Month clicked
+2026-05-23 20:18:46,933 : INFO : August selected
+2026-05-23 20:18:46,934 : INFO : Waiting for From location field
+2026-05-23 20:18:47,024 : INFO : From location field clicked
+2026-05-23 20:18:47,024 : INFO : Entering from location : Chennai
+2026-05-23 20:18:47,138 : INFO : From location entered
+2026-05-23 20:18:47,138 : INFO : Selecting location : Chennai
+2026-05-23 20:18:48,299 : INFO : Location selected successfully
+2026-05-23 20:18:48,300 : INFO : Selecting category : International
+2026-05-23 20:18:49,233 : INFO : International selected
+2026-05-23 20:18:49,233 : INFO : Selecting filter : Rain
+2026-05-23 20:18:50,266 : INFO : Rain selected
+2026-05-23 20:18:50,467 : INFO : Screenshot saved at: reports/screenshots/filter_selection_20260523_201850.png
+2026-05-23 20:18:50,490 : INFO : FILTER TEST PASSED
+2026-05-23 20:18:50,493 : INFO : Closing Browser
+2026-05-23 20:18:52,775 : INFO : Browser Closed
+2026-05-23 20:18:52,776 : INFO : ------------------------------------------------
+2026-05-23 20:18:52,780 : INFO : ==================================================
+2026-05-23 20:18:52,780 : INFO : Starting Test
+2026-05-23 20:18:52,780 : INFO : Browser from config : chrome
+2026-05-23 20:18:53,435 : INFO : Opened Browser : chrome
+2026-05-23 20:18:54,155 : INFO : Loaded URL : https://www.ixigo.com/
+2026-05-23 20:18:54,221 : INFO : Page loaded successfully
+2026-05-23 20:18:54,225 : INFO : Checking for popup
+2026-05-23 20:18:57,092 : INFO : Popup closed successfully
+2026-05-23 20:18:57,092 : INFO : ========== TEST : LOCATION CARD ==========
+2026-05-23 20:18:57,093 : INFO : Waiting for Plan button
+2026-05-23 20:19:00,759 : INFO : Plan page opened
+2026-05-23 20:19:00,759 : INFO : Waiting for Travel Month
+2026-05-23 20:19:00,789 : INFO : Travel Month clicked
+2026-05-23 20:19:00,838 : INFO : August selected
+2026-05-23 20:19:00,839 : INFO : Waiting for From location field
+2026-05-23 20:19:00,932 : INFO : From location field clicked
+2026-05-23 20:19:00,932 : INFO : Entering from location : Chennai
+2026-05-23 20:19:01,067 : INFO : From location entered
+2026-05-23 20:19:01,068 : INFO : Selecting location : Chennai
+2026-05-23 20:19:02,092 : INFO : Location selected successfully
+2026-05-23 20:19:02,092 : INFO : Selecting category : International
+2026-05-23 20:19:02,959 : INFO : International selected
+2026-05-23 20:19:02,959 : INFO : Selecting filter : Rain
+2026-05-23 20:19:03,963 : INFO : Rain selected
+2026-05-23 20:19:03,963 : INFO : Selecting country : Malaysia
+2026-05-23 20:19:05,870 : INFO : Malaysia selected
+2026-05-23 20:19:06,505 : INFO : Page transition to Location Page started
+2026-05-23 20:19:06,505 : INFO : Scrolling down to Places To Visit section
+2026-05-23 20:19:07,330 : INFO : Scrolled down smoothly
+2026-05-23 20:19:07,330 : INFO : Selecting category : art
+2026-05-23 20:19:08,682 : INFO : art selected
+2026-05-23 20:19:08,682 : INFO : Waiting for location card : Penang Street Art
+2026-05-23 20:19:09,543 : INFO : Penang Street Art selected
+2026-05-23 20:19:10,309 : INFO : Screenshot saved at: reports/screenshots/location_card_selection_20260523_201910.png
+2026-05-23 20:19:10,327 : INFO : LOCATION CARD TEST PASSED
+2026-05-23 20:19:10,328 : INFO : ========== POSITIVE  TEST : COMPLETED ==========
+2026-05-23 20:19:10,329 : INFO : Closing Browser
+2026-05-23 20:19:12,585 : INFO : Browser Closed
+2026-05-23 20:19:12,586 : INFO : ------------------------------------------------
+2026-05-23 20:19:12,590 : INFO : ==================================================
+2026-05-23 20:19:12,590 : INFO : Starting Test
+2026-05-23 20:19:12,591 : INFO : Browser from config : chrome
+2026-05-23 20:19:13,255 : INFO : Opened Browser : chrome
+2026-05-23 20:19:13,860 : INFO : Loaded URL : https://www.ixigo.com/
+2026-05-23 20:19:13,939 : INFO : Page loaded successfully
+2026-05-23 20:19:13,953 : INFO : Checking for popup
+2026-05-23 20:19:16,847 : INFO : Popup closed successfully
+2026-05-23 20:19:16,848 : INFO : ========== STARTING INVALID LOCATION TEST ==========
+2026-05-23 20:19:16,848 : INFO : Waiting for Plan button
+2026-05-23 20:19:20,367 : INFO : Plan page opened
+2026-05-23 20:19:20,368 : INFO : Waiting for From location field
+2026-05-23 20:19:20,468 : INFO : From location field clicked
+2026-05-23 20:19:20,469 : INFO : Entering from location : abcd
+2026-05-23 20:19:20,560 : INFO : From location entered
+2026-05-23 20:19:20,560 : INFO : Invalid location entered
+2026-05-23 20:19:21,800 : INFO : Screenshot saved at: reports/screenshots/invalid_location_search_20260523_201921.png
+2026-05-23 20:19:21,819 : INFO : Error message verified successfully
+2026-05-23 20:19:21,820 : INFO : ========== INVALID LOCATION TEST PASSED ==========
+2026-05-23 20:19:21,821 : INFO : Closing Browser
+2026-05-23 20:19:24,020 : INFO : Browser Closed
+2026-05-23 20:19:24,020 : INFO : ------------------------------------------------
+2026-05-23 20:19:24,023 : INFO : ==================================================
+2026-05-23 20:19:24,024 : INFO : Starting Test
+2026-05-23 20:19:24,024 : INFO : Browser from config : chrome
+2026-05-23 20:19:24,707 : INFO : Opened Browser : chrome
+2026-05-23 20:19:25,391 : INFO : Loaded URL : https://www.ixigo.com/
+2026-05-23 20:19:25,521 : INFO : Page loaded successfully
+2026-05-23 20:19:25,522 : INFO : Checking for popup
+2026-05-23 20:19:28,354 : INFO : Popup closed successfully
+2026-05-23 20:19:28,355 : INFO : ========== STARTING BOOK NOW NEGATIVE TEST ==========
+2026-05-23 20:19:28,381 : INFO : Invalid Location : Hikone
+2026-05-23 20:19:28,382 : INFO : Waiting for Plan button
+2026-05-23 20:19:32,502 : INFO : Plan page opened
+2026-05-23 20:19:32,502 : INFO : Waiting for Travel Month
+2026-05-23 20:19:32,530 : INFO : Travel Month clicked
+2026-05-23 20:19:32,577 : INFO : August selected
+2026-05-23 20:19:32,578 : INFO : Waiting for From location field
+2026-05-23 20:19:32,668 : INFO : From location field clicked
+2026-05-23 20:19:32,669 : INFO : Entering from location : Chennai
+2026-05-23 20:19:32,789 : INFO : From location entered
+2026-05-23 20:19:32,790 : INFO : Selecting location : Chennai
+2026-05-23 20:19:33,504 : INFO : Location selected successfully
+2026-05-23 20:19:33,506 : INFO : Planner flow completed
+2026-05-23 20:19:33,507 : INFO : Selecting category : International
+2026-05-23 20:19:34,496 : INFO : International selected
+2026-05-23 20:19:34,496 : INFO : Selecting filter : Rain
+2026-05-23 20:19:35,593 : INFO : Rain selected
+2026-05-23 20:19:35,595 : INFO : Selecting country : Malaysia
+2026-05-23 20:19:37,488 : INFO : Malaysia selected
+2026-05-23 20:19:38,006 : INFO : Page transition to Location Page started
+2026-05-23 20:19:38,006 : INFO : Location selected successfully
+2026-05-23 20:19:38,329 : INFO : Screenshot saved at: reports/screenshots/Location_page_20260523_201938.png
+2026-05-23 20:19:38,332 : INFO : Smooth scrolling to How To Reach section
+2026-05-23 20:19:38,337 : INFO : Scrolled to bottom successfully
+2026-05-23 20:19:39,454 : INFO : From dropdown clicked
+2026-05-23 20:19:39,454 : INFO : Entering Invalid Location : Hikone
+2026-05-23 20:19:39,704 : INFO : Invalid location entered
+2026-05-23 20:19:39,705 : INFO : Selecting location : Hikone
+2026-05-23 20:19:40,388 : INFO : Location selected successfully
+2026-05-23 20:19:40,428 : INFO : Page refreshed with Hikone
+2026-05-23 20:19:41,504 : INFO : Book Now button removed successfully
+2026-05-23 20:19:41,708 : INFO : Screenshot saved at: reports/screenshots/book_now_negative_test_20260523_201941.png
+2026-05-23 20:19:41,709 : INFO : Checking Book Now button
+2026-05-23 20:19:41,718 : INFO : Book Now Buttons Found : 0
+2026-05-23 20:19:41,718 : INFO : ========== BOOK NOW NEGATIVE TEST PASSED ==========
+2026-05-23 20:19:41,719 : INFO : ========== NEGATIVE  TEST : COMPLETED ==========
+2026-05-23 20:19:41,720 : INFO : Closing Browser
+2026-05-23 20:19:43,965 : INFO : Browser Closed
+2026-05-23 20:19:43,966 : INFO : ------------------------------------------------
+2026-05-23 20:19:43,969 : INFO : ==================================================
+2026-05-23 20:19:43,970 : INFO : Starting Test
+2026-05-23 20:19:43,970 : INFO : Browser from config : chrome
+2026-05-23 20:19:44,713 : INFO : Opened Browser : chrome
+2026-05-23 20:19:45,444 : INFO : Loaded URL : https://www.ixigo.com/
+2026-05-23 20:19:45,613 : INFO : Page loaded successfully
+2026-05-23 20:19:45,614 : INFO : Checking for popup
+2026-05-23 20:19:48,321 : INFO : Popup closed successfully
+2026-05-23 20:19:48,322 : INFO : ========== STARTING END TO END TRIP PLANNER ==========
+2026-05-23 20:19:48,323 : INFO : Waiting for Login button
+2026-05-23 20:19:48,401 : INFO : Login button clicked
+2026-05-23 20:19:48,402 : INFO : Entering mobile number
+2026-05-23 20:19:49,022 : INFO : Mobile number entered
+2026-05-23 20:19:49,022 : INFO : Clicking Continue button
+2026-05-23 20:19:49,116 : INFO : Continue button clicked
+2026-05-23 20:19:49,230 : INFO : Screenshot saved at: reports/screenshots/login_page_20260523_201949.png
+2026-05-23 20:19:49,231 : INFO : Waiting for login completion
+2026-05-23 20:20:09,232 : INFO : Login completed successfully
+2026-05-23 20:20:12,243 : INFO : Waiting for Plan button
+2026-05-23 20:20:15,463 : INFO : Plan page opened
+2026-05-23 20:20:15,463 : INFO : Waiting for Travel Month
+2026-05-23 20:20:15,494 : INFO : Travel Month clicked
+2026-05-23 20:20:15,541 : INFO : August selected
+2026-05-23 20:20:15,541 : INFO : Waiting for From location field
+2026-05-23 20:20:15,622 : INFO : From location field clicked
+2026-05-23 20:20:15,622 : INFO : Entering from location : Chennai
+2026-05-23 20:20:15,700 : INFO : From location entered
+2026-05-23 20:20:15,700 : INFO : Selecting location : Chennai
+2026-05-23 20:20:16,317 : INFO : Location selected successfully
+2026-05-23 20:20:16,464 : INFO : Screenshot saved at: reports/screenshots/planner_page_20260523_202016.png
+2026-05-23 20:20:16,466 : INFO : Selecting category : International
+2026-05-23 20:20:17,324 : INFO : International selected
+2026-05-23 20:20:17,325 : INFO : Selecting filter : Rain
+2026-05-23 20:20:18,316 : INFO : Rain selected
+2026-05-23 20:20:18,316 : INFO : Selecting country : Malaysia
+2026-05-23 20:20:20,198 : INFO : Malaysia selected
+2026-05-23 20:20:21,223 : INFO : Page transition to Location Page started
+2026-05-23 20:20:21,540 : INFO : Screenshot saved at: reports/screenshots/filter_page_20260523_202021.png
+2026-05-23 20:20:21,542 : INFO : Scrolling down to Places To Visit section
+2026-05-23 20:20:22,358 : INFO : Scrolled down smoothly
+2026-05-23 20:20:22,358 : INFO : Selecting category : art
+2026-05-23 20:20:23,710 : INFO : art selected
+2026-05-23 20:20:23,710 : INFO : Waiting for location card : Penang Street Art
+2026-05-23 20:20:24,570 : INFO : Penang Street Art selected
+2026-05-23 20:20:25,345 : INFO : Screenshot saved at: reports/screenshots/location_page_20260523_202025.png
+2026-05-23 20:20:25,362 : INFO : Waiting for Directions button
+2026-05-23 20:20:25,384 : INFO : Clicking Directions button
+2026-05-23 20:20:25,481 : INFO : Waiting for Google Maps tab to open...
+2026-05-23 20:20:25,497 : INFO : Switched to new tab. Waiting for title to load...
+2026-05-23 20:20:27,479 : INFO : Google Maps Title : 5°24'52.6"N 100°20'17.7"E - Google Maps
+2026-05-23 20:20:27,497 : INFO : Google Maps page verified
+2026-05-23 20:20:27,868 : INFO : Screenshot saved at: reports/screenshots/google_map_page_20260523_202027.png
+2026-05-23 20:20:27,935 : INFO : Google Maps tab closed
+2026-05-23 20:20:27,938 : INFO : Switched back to Ixigo page
+2026-05-23 20:20:28,184 : INFO : Screenshot saved at: reports/screenshots/google_map_page_20260523_202027.png
+2026-05-23 20:20:28,187 : INFO : Closing popup
+2026-05-23 20:20:29,278 : INFO : Popup closed successfully
+2026-05-23 20:20:29,279 : INFO : Triggering page scroll to load bottom sections...
+2026-05-23 20:20:30,786 : INFO : Locating the Book Now button...
+2026-05-23 20:20:31,602 : INFO : Scrolled smoothly to Book Now section
+2026-05-23 20:20:31,602 : INFO : Waiting for Book Now button
+2026-05-23 20:20:32,159 : INFO : Book Now clicked
+2026-05-23 20:20:32,280 : INFO : Screenshot saved at: reports/screenshots/book_now_page_20260523_202032.png
+2026-05-23 20:20:32,281 : INFO : Switching to flight results tab
+2026-05-23 20:20:33,975 : INFO : Switched to flight tab and page is fully loaded
+2026-05-23 20:20:33,975 : INFO : Waiting for first Flight Details button
+2026-05-23 20:20:36,381 : INFO : First Flight Details clicked successfully
+2026-05-23 20:20:37,991 : INFO : Screenshot saved at: reports/screenshots/flight_page_20260523_202037.png
+2026-05-23 20:20:37,994 : INFO : ========== END TO END TRIP PLANNER COMPLETED SUCCESSFULLY ==========
+2026-05-23 20:20:37,998 : INFO : Closing Browser
+2026-05-23 20:20:40,295 : INFO : Browser Closed
+2026-05-23 20:20:40,295 : INFO : ------------------------------------------------
